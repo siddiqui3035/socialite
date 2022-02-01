@@ -10,14 +10,14 @@
 5. Go to config/service.php 
 
       'google' => [
-        'client_id' => '731298131735-bn71b5r1r2g48tiljtegvshumen3el0q.apps.googleusercontent.com',
-        'client_secret' => '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',
+        'client_id' => 'Google ID',
+        'client_secret' => 'Google key',
         'redirect' => 'http://127.0.0.1:8000/callback/google',
       ],
 
       'facebook' => [
-        'client_id' => '3053216444893975',
-        'client_secret' => '7dd5094bf2aae19eb7160d240c276652',
+        'client_id' => 'facebook id',
+        'client_secret' => 'facebook key',
         'redirect' => 'http://localhost:8000/login/callback/facebook',
       ],
 6. Create Controller for gmail and facebook.
