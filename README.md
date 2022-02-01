@@ -1,3 +1,30 @@
+1. Create a laravel project.
+2. Create database in ENV.
+3. Install Laravel Socialite Package for social login.  
+    composer require laravel/socialite 
+4. Go to config/app.php register Socialite in provider 
+    Laravel\Socialite\SocialiteServiceProvider::class,
+
+    Go to config/app.php register Socialite in aliases
+    'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+5. Go to config/service.php 
+
+      'google' => [
+        'client_id' => '731298131735-bn71b5r1r2g48tiljtegvshumen3el0q.apps.googleusercontent.com',
+        'client_secret' => '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',
+        'redirect' => 'http://127.0.0.1:8000/callback/google',
+      ],
+
+      'facebook' => [
+        'client_id' => '3053216444893975',
+        'client_secret' => '7dd5094bf2aae19eb7160d240c276652',
+        'redirect' => 'http://localhost:8000/login/callback/facebook',
+      ],
+6. Create Controller for gmail and facebook.
+    php artisan make:controller GoogleController
+    php artisan make:controller FacebookController
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
