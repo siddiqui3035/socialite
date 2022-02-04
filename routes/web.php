@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,7 +21,9 @@ Route::get('/', function () {
 
 
 Auth::routes();
+// Auth::routes(['verify' => true]);
 
+Route::get('/verify', 'Auth\RegisterController@verifyUser')->name('verify.user');
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/auth/redirect/{provider}', 'GoogleLoginController@redirect');
