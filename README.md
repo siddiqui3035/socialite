@@ -37,18 +37,26 @@ php artisan migrate
 
 ```
 
-## Add Social app key in ENV file:
+## Now go to config/service.php and google and facebook app keys:
 
-```html
+```php
 
-FACEBOOK_CLIENT_ID=111111111
-FACEBOOK_CLIENT_SECRET=111111111111111111111111111
-
-GOOGLE_CLIENT_ID=111111111
-GOOGLE_CLIENT_SECRET=111111111111111111111111111
-
+'google' => [
+    'client_id' => '***************************************.apps.googleusercontent.com',
+    'client_secret' => '***************************',
+    'redirect' => 'http://localhost:8000/callback/google',
+  ],
 ```
 
+```php
+
+'facebook' => [
+  'client_id' => '****************',
+  'client_secret' => '*********************************',
+  'redirect' => 'http://localhost:8000/login/callback/facebook',
+],
+
+```
 
 ## Install Laravel Socialite Package for social login.
 
@@ -57,20 +65,29 @@ GOOGLE_CLIENT_SECRET=111111111111111111111111111
 composer require laravel/socialite 
 
 ```
-## Go to config/app.php register Socialite in provider 
+
+## Now go to config/app.php file for register socialite in provider and aliases array:
 
 ```php
+
+'providers' => [
 
 Laravel\Socialite\SocialiteServiceProvider::class,
 
-```
+]
 
-  # Go to config/app.php register Socialite in aliases
+```
 
 ```php
 
+'aliases' => [
+  
 'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+
+]
+
 ```
+
 ## Go to config/service.php 
 
 ```php
