@@ -26,8 +26,9 @@ npm run dev
 
 ```php
 
-        $table->string('provider')->nullable();
-        $table->string('provider_id')->nullable();
+$table->string('provider')->nullable();
+$table->string('provider_id')->nullable();
+
 ```
 
 ```php 
