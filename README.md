@@ -54,47 +54,53 @@ GOOGLE_CLIENT_SECRET=111111111111111111111111111
 
 ```php  
 
-    composer require laravel/socialite 
+composer require laravel/socialite 
 
 ```
 ## Go to config/app.php register Socialite in provider 
 
 ```php
-    Laravel\Socialite\SocialiteServiceProvider::class,
+
+Laravel\Socialite\SocialiteServiceProvider::class,
+
 ```
 
   # Go to config/app.php register Socialite in aliases
 
 ```php
 
-    'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+'Socialite' => Laravel\Socialite\Facades\Socialite::class,
 ```
 ## Go to config/service.php 
 
 ```php
-      'google' => [
-        'client_id' => 'Google ID',
-        'client_secret' => 'Google key',
-        'redirect' => 'http://localhost:8000/callback/google',
-      ],
+
+'google' => [
+  'client_id' => 'Google ID',
+  'client_secret' => 'Google key',
+  'redirect' => 'http://localhost:8000/callback/google',
+],
+
 ```
 
 ```php
-      'facebook' => [
-        'client_id' => 'facebook id',
-        'client_secret' => 'facebook key',
-        'redirect' => 'http://localhost:8000/login/callback/facebook',
-      ],
+
+'facebook' => [
+  'client_id' => 'facebook id',
+  'client_secret' => 'facebook key',
+  'redirect' => 'http://localhost:8000/login/callback/facebook',
+],
 
 ```
 ## Create Controller for gmail and facebook.
 
 ```php
 
-    php artisan make:controller GoogleController
+php artisan make:controller GoogleController
 
 ```
 ```php
+
 <?php
 
 namespace App\Http\Controllers;
@@ -141,7 +147,7 @@ class GoogleLoginController extends Controller
 ```
 ```php
 
-    php artisan make:controller FacebookController
+php artisan make:controller FacebookController
 
 ```
 
